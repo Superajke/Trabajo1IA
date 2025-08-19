@@ -12,7 +12,6 @@ def estadisticos(m):
     vmin = 255
     vmax = 0
 
-    # primera pasada para min, max y suma
     for fila in m:
         for val in fila:
             if val < vmin: vmin = val
@@ -20,7 +19,6 @@ def estadisticos(m):
             total += val
     media = total / n
 
-    # segunda pasada para varianza
     suma_sq = 0
     for fila in m:
         for val in fila:
