@@ -1,13 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Reto 4 sin Matplotlib – solo guarda resultados en disco
-Requisitos: opencv-python
-"""
-
 import os, cv2
 
 BASE = os.path.dirname(__file__)
-SRC  = os.path.join(BASE, 'images.jpg')          # tu foto
+SRC  = os.path.join(BASE, 'images.jpg')          
 OUT1 = os.path.join(BASE, 'mascara.png')
 OUT2 = os.path.join(BASE, 'segmentado.png')
 
@@ -20,7 +14,7 @@ blur = cv2.GaussianBlur(img_gray, (5, 5), 0)
 binary = cv2.adaptiveThreshold(
             blur, 255,
             cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-            cv2.THRESH_BINARY_INV,      # cambia a THRESH_BINARY si lo requieres
+            cv2.THRESH_BINARY_INV,      
             11, 2)
 
 kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
